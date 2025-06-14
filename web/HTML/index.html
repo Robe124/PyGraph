@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Telemetría</title>
+    <link rel="stylesheet" href="/telemetria_sensores/web/CSS/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        * {
+            background-color: #262627;
+            color: aliceblue;
+        }
+
+        .Titulo {
+            margin-left: 43%;
+            margin-bottom: 2%;
+            font-size: 10vh;
+            margin-top: 4%;
+            color: yellowgreen;
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 200;
+            font-style: normal;
+        }
+        @import url('https://fonts.googleapis.com/css2?Bebas+Neue&display=swap');
+
+.btnGFafico {
+    cursor: pointer;
+    padding: 10px;
+    font-family: "Courier New", monospace;
+    font-size: large;
+    background-color: rgb(92, 76, 148);
+    border-color: rgb(92, 76, 148);
+    border-radius: 3px;
+    font-weight: 500;
+    margin-left: 44%;
+    margin-top: 6%;
+}
+
+.btnGFafico:hover {
+    color: rgb(255, 255, 255);
+    background: rgb(85, 0, 204);
+    border-color: rgb(76, 17, 205);
+    border-style: solid;
+}
+
+.poema{
+    background-color: rgb(25, 26, 27);
+    padding: 20px;
+    border-radius: 20px;
+}
+.container {
+     display: flex;
+    text-align: center;
+    justify-content: center;
+}
+    </style>
+    
+    <h1 class="Titulo" class="bebas-neue-regular">PY-Graph</h1>
+    <div class="container">
+        <p class="poema">
+            Bienvenido a la terminal de control de telemetría.<br>
+            Desde este panel central, podrás visualizar y gestionar en tiempo real<br>
+            los datos vitales de nuestros sistemas aeroespaciales.<br><br>
+
+            Esta es la primera versión operativa de la serie <strong>PY-Graph</strong>,<br>
+            conocida como <strong>Mark I</strong>.<br>
+            Diseñada para ofrecer precisión, estabilidad y claridad visual<br>
+            en cada lanzamiento, prueba o simulación.<br><br>
+
+            Aquí convergen sensores, lógica y visualización,<br>
+            para brindarte una experiencia completa de monitoreo y control<br>
+            desde la Tierra hasta el límite de la atmósfera.<br><br>
+
+            Prepárate para despegar.
+        </p>
+    </div>
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('open');
+    }
+  </script>
+    <button type="button" class="btnGFafico" onclick="location.href='menu.html'">MOSTRAR TELEMETRIA</button>
+
+</html>

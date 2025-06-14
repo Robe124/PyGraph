@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Listado de Comandos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+    }
+
+    .Contenedor {
+      background-color: #2b2b2b;
+      margin: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      color: white;
+    }
+
+    th,
+    td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #444;
+    }
+
+    th {
+      background-color: #3a3a3a;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #333;
+    }
+
+    tr:hover td {
+      background-color: #444;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 220px;
+      height: 100%;
+      background-color: #2b2b2b;
+      padding: 20px;
+      transition: transform 0.3s ease;
+      z-index: 10;
+    }
+
+    .sidebar.open {
+      transform: translateX(250px);
+    }
+
+    .sidebar h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul li a {
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Hamburger button */
+    .hamburger {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      background-color: #ebebeb;
+      border: none;
+      padding: 7px;
+      padding-left: 9px;
+      padding-right: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      z-index: 11;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 4px;
+      background: rgb(206, 0, 0);
+    }
+    .TitolMenu{
+      margin-top: 40px ;
+    }
+
+
+    @media (max-width: 768px) {
+      .sidebar {
+        transform: translateX(-100%);
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+      }
+
+
+    }
+
+    @media (max-width: 600px) {
+
+      th,
+      td {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="sidebar open" id="sidebar">
+    <h2 class="TitolMenu">Menú</h2>
+    <ul>
+      <li><a onclick="location.href='menu.html'">Volver</a></li>
+      <li><a onclick="location.href='Graficas.html'">Telemetría</a></li>
+      <li><a onclick="location.href='ListaComandos.html'">Comandos consola</a></li>
+      <li><a onclick="location.href='PruebaSensores.html'">Probar sensores</a></li>
+      <li><a onclick="location.href='ListadoProyectos.html'">Ejemplos proyectos</a></li>
+    </ul>
+  </nav>
+ 
+  <h1>Comandos disponibles</h1>
+
+  <div class="Contenedor">
+        <button class="hamburger" id="toggleSidebar">&#9776;</button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Comando</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>clear</td>
+          <td>Limpia la consola</td>
+        </tr>
+        <tr>
+          <td>help</td>
+          <td>Muestra todos los comandos disponibles</td>
+        </tr>
+        <tr>
+          <td>showSensors</td>
+          <td>Muestra los sensores conectados</td>
+        </tr>
+        <tr>
+          <td>getDate</td>
+          <td>Devuelve la fecha y hora actuales</td>
+        </tr>
+        <tr>
+          <td>temp</td>
+          <td>Devuelve la temperatura actual</td>
+        </tr>
+        <tr>
+          <td>hum</td>
+          <td>Devuelve la humedad actual</td>
+        </tr>
+        <tr>
+          <td>top</td>
+          <td>Muestra los valores máximos de los sensores</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    // Menú hamburguesa
+    document.getElementById("toggleSidebar").addEventListener("click", () => {
+      document.getElementById("sidebar").classList.toggle("open");
+    });
+
+  </script>
+</body>
+
+</html>
